@@ -35,3 +35,45 @@
   gap: 7px;
 }
 
+@media (max-width: 1200px) {
+  .profile__avatar {
+    max-width: 466px;
+    margin-right: 34px;
+  }
+  
+  .profile__content {
+    padding-bottom: 145px;
+  }
+  
+  .profile__birthday {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  
+  .profile__edit {
+    gap: 2px;
+  }
+}
+
+@media (max-width: 992px) {
+  .profile__avatar {
+    max-width: 340px;
+    margin-right: 20px;
+  }
+  
+  .profile__content {
+    padding-bottom: 68px;
+  }
+
+  .profile__birthday {
+    margin-bottom: 24px;
+  }
+  
+  .profile__edit {
+    gap: 7px;
+  }
+
+  .profile__edit-icon {
+    width: 30px;
+  }
+}
