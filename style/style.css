@@ -87,12 +87,8 @@ fieldset {
   color: #365ABA;
 }
 
-/* !todo  */
-
-.wishlist {
-  display: none;
+.btn_castling {
+  background: #365ABA;
+  color: #FFFFFF;
 }
 
-.edit {
-  display: none;
-}
