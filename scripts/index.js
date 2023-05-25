@@ -1,7 +1,8 @@
 import { JWT_TOKEN_KEY } from './const.js';
 import { createHero } from './createHero.js';
-import { getLogin } from './getLogin.js';
+import { getLogin } from './serviceAPI.js';
 import { renderNavigation } from './renderNavigation.js';
+import { createWishlist } from './createWishlist.js';
 
 export const router = Router();
 const token = localStorage.getItem(JWT_TOKEN_KEY);
