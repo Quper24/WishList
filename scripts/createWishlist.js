@@ -12,18 +12,6 @@ export const createWishlist = async (pageLogin) => {
 
   const user = await getUser(pageLogin);
 
-  /*
-    {
-      "id": "0369af76-218e-4ac0-bf22-0fa9cd842d57",
-      "login": "Maksim",
-      "wish": {
-        'гаджеты': [{телефон},{наушники}],
-        'обувь': [{кросы},{тапочки}],
-      },
-      "avatar": "avatars/empty.png",
-      "birthdate": ""
-     }
-*/
   const section = createElement('section', {
     className: 'wishlist',
   });
@@ -40,7 +28,7 @@ export const createWishlist = async (pageLogin) => {
 
   const avatar = createElement('img', {
     className: 'profile__avatar',
-    src: 'img/avatar.png',
+    src: `${API_URL}/${user.avatar}`,
     alt: 'фото Иван Петров',
   });
 

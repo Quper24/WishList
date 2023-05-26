@@ -21,8 +21,21 @@ export const pluralizeYears = (age) => {
   }
 };
 
-export const handleImageFileSelection = (input, image) => {
-  // !todo
+export const handleImageFileSelection = (inputFile, image, inputHidden) => {
+  const handleFileInputChage = (event) => {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.addEventListener('load', () => {
+        image.src = reader.result;
+        inputHidden.value = reader.result;
+      });
+
+      reader.readAsDataURL(file);
+    }
+  };
+
+  inputFile.addEventListener('change', handleFileInputChage);
 };
 
 export const createSelectDate = (
@@ -76,15 +89,15 @@ export const createSelectDate = (
   }
 
   if (birhdate) {
-    const [day, month, year] = birhdate.split('/');
+    const [month, day, year] = birhdate.split('/');
     selectDay.value = day;
     selectMonth.value = month;
     selectYear.value = year;
   }
 
-  [selectDay, selectMonth, selectYear].forEach(dateSelect => {
-    dateSelect.addEventListener('change', ({currentTarget}) => {
+  [selectDay, selectMonth, selectYear].forEach((dateSelect) => {
+    dateSelect.addEventListener('change', ({ currentTarget }) => {
       currentTarget.blur();
-    })
-  })
+    });
+  });
 };
